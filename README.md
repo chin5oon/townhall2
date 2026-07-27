@@ -1,6 +1,6 @@
 # Townhall Game — Rounds 4–6
 
-The follow-on interactive decision game for the underground MRT construction proposal. Players receive immediate scoring and feedback, plus the recommended option when needed.
+A standalone interactive decision game for an underground MRT construction proposal. It can be played independently or after Rounds 1–3. Players receive immediate scoring and feedback, plus the recommended option when needed.
 
 ## Included rounds
 

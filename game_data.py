@@ -1,11 +1,11 @@
 """Question content for Townhall Game — Folder B (Rounds 4–6)."""
 
 GAME_TITLE = "The Building Challenges"
-GAME_SUBTITLE = "Rounds 4–6 · Tunnelling, Testing, and Site Supervision"
+GAME_SUBTITLE = "A Different Adventure · Rounds 4–6"
 
 INTRODUCTION = (
-    "Continue the underground MRT proposal by balancing Cost Saving, "
-    "Productivity & Innovation, and Safety across the next three rounds."
+    "Take on a standalone underground MRT challenge. Balance Cost Saving, "
+    "Productivity & Innovation, and Safety across three rounds—no prior game is required."
 )
 
 QUESTIONS = [
@@ -88,7 +88,8 @@ QUESTIONS = [
         "id": "round_5_part_2",
         "round": "Round 5 · Part 2",
         "title": "Concrete Cube Sampling Rate",
-        "prompt": "Choose the correct sampling rate for a concrete volume of up to 1,000 m³.",
+        "prompt": "Choose the correct sampling rate for a concrete volume of 1,000 m³.",
+        "note": "Note: 1 sample = min. 2 cubes for 7 days and min. 2 cubes for 28 days.",
         "options": [
             {
                 "label": "Option A — 1 sample per 100 m³",

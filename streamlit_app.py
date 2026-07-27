@@ -31,6 +31,8 @@ st.markdown(
     .question-card { padding: 1.2rem 1.3rem; margin: .8rem 0 1rem; border: 1px solid #dbe5e4;
                      border-radius: 16px; background: #ffffffdd; }
     .eyebrow { color: #1d4ed8; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; }
+    .question-note { margin: .85rem 0 0; padding: .65rem .8rem; border-radius: 10px;
+                     color: #92400e; background: #fffbeb; font-weight: 650; }
     .score-note { padding: .8rem 1rem; border-left: 4px solid #f59e0b; border-radius: 8px; background: #fffbeb; }
     [data-testid="stMetric"] { background: white; border: 1px solid #dbe5e4; padding: .75rem; border-radius: 12px; }
     div[data-testid="stRadio"] label { padding: .25rem 0; }
@@ -99,11 +101,11 @@ st.markdown(
 sidebar_scoreboard()
 
 if not st.session_state.started:
-    st.subheader("Continue the mission")
+    st.subheader("A different adventure")
     st.write(INTRODUCTION)
     st.info(
-        "This folder contains Rounds 4–6. Round 5 has two parts, so the app presents four "
-        "decision screens in total."
+        "Play this as an independent game or after Rounds 1–3. Round 5 has two parts, "
+        "so this adventure contains four decision screens."
     )
     if st.button("Start Rounds 4–6", type="primary", use_container_width=True):
         st.session_state.started = True
@@ -113,22 +115,35 @@ if not st.session_state.started:
 if st.session_state.question_index >= len(QUESTIONS):
     final = totals()
     max_score = sum(max(score_total(option["scores"]) for option in q["options"]) for q in QUESTIONS)
-    st.balloons()
-    st.header("Rounds 4–6 complete")
+    won = final["total"] == max_score
+    if won:
+        st.balloons()
+    st.header("Adventure accomplished" if won else "Adventure debrief")
     st.write("Your scorecard for these three rounds is ready.")
     score_metrics(final, "Final score")
     st.progress(final["total"] / max_score, text=f"{final['total']} of {max_score} available points")
-    if final["total"] == max_score:
+    if won:
         st.success("Outstanding — you selected every recommended option.")
     elif final["total"] >= max_score * 0.6:
-        st.success("Good result — review any missed recommendations to strengthen the proposal.")
+        st.info(
+            "Good progress — review the missed recommendations in your debrief, "
+            "then retry the adventure to earn the win."
+        )
     else:
-        st.warning("There is room to strengthen the proposal. Review the recommendations and try again.")
+        st.warning(
+            "There is room to strengthen the proposal. Use the debrief below to review "
+            "the recommended choices, then try the adventure again."
+        )
     with st.expander("Review your decisions", expanded=True):
         for answer in st.session_state.answers:
             icon = "✅" if answer["best"] else "↗️"
             st.markdown(f"{icon} **{answer['round']}:** {answer['label']} — {score_total(answer['scores'])} points")
-    if st.button("Play again", type="primary", use_container_width=True):
+            if not answer["best"]:
+                answered_question = next(q for q in QUESTIONS if q["round"] == answer["round"])
+                recommended = next(option for option in answered_question["options"] if option["best"])
+                st.caption(f"Recommended: {recommended['label']}")
+    replay_label = "Play another adventure" if won else "Retry the adventure"
+    if st.button(replay_label, type="primary", use_container_width=True):
         fresh_state()
         st.rerun()
     st.stop()
@@ -138,9 +153,14 @@ st.progress(
     (st.session_state.question_index + 1) / len(QUESTIONS),
     text=f"Decision {st.session_state.question_index + 1} of {len(QUESTIONS)}",
 )
+question_note = (
+    f'<p class="question-note">{question["note"]}</p>'
+    if question.get("note")
+    else ""
+)
 st.markdown(
     f'<div class="question-card"><div class="eyebrow">{question["round"]}</div>'
-    f'<h2>{question["title"]}</h2><p>{question["prompt"]}</p></div>',
+    f'<h2>{question["title"]}</h2><p>{question["prompt"]}</p>{question_note}</div>',
     unsafe_allow_html=True,
 )
 
