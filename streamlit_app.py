@@ -101,11 +101,11 @@ st.markdown(
 sidebar_scoreboard()
 
 if not st.session_state.started:
-    st.subheader("A different adventure")
+    st.subheader("A different mission")
     st.write(INTRODUCTION)
     st.info(
         "Play this as an independent game or after Rounds 1–3. Round 5 has two parts, "
-        "so this adventure contains four decision screens."
+        "so this mission contains four decision screens."
     )
     if st.button("Start Rounds 4–6", type="primary", use_container_width=True):
         st.session_state.started = True
@@ -118,7 +118,7 @@ if st.session_state.question_index >= len(QUESTIONS):
     won = final["total"] == max_score
     if won:
         st.balloons()
-    st.header("Adventure accomplished" if won else "Adventure debrief")
+    st.header("Mission accomplished" if won else "Mission debrief")
     st.write("Your scorecard for these three rounds is ready.")
     score_metrics(final, "Final score")
     st.progress(final["total"] / max_score, text=f"{final['total']} of {max_score} available points")
@@ -127,12 +127,12 @@ if st.session_state.question_index >= len(QUESTIONS):
     elif final["total"] >= max_score * 0.6:
         st.info(
             "Good progress — review the missed recommendations in your debrief, "
-            "then retry the adventure to earn the win."
+            "then retry the mission to earn the win."
         )
     else:
         st.warning(
             "There is room to strengthen the proposal. Use the debrief below to review "
-            "the recommended choices, then try the adventure again."
+            "the recommended choices, then try the mission again."
         )
     with st.expander("Review your decisions", expanded=True):
         for answer in st.session_state.answers:
@@ -142,7 +142,7 @@ if st.session_state.question_index >= len(QUESTIONS):
                 answered_question = next(q for q in QUESTIONS if q["round"] == answer["round"])
                 recommended = next(option for option in answered_question["options"] if option["best"])
                 st.caption(f"Recommended: {recommended['label']}")
-    replay_label = "Play another adventure" if won else "Retry the adventure"
+    replay_label = "Play another mission" if won else "Retry the mission"
     if st.button(replay_label, type="primary", use_container_width=True):
         fresh_state()
         st.rerun()

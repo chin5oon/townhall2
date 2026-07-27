@@ -1,11 +1,11 @@
 """Question content for Townhall Game — Folder B (Rounds 4–6)."""
 
 GAME_TITLE = "The Building Challenges"
-GAME_SUBTITLE = "A Different Adventure · Rounds 4–6"
+GAME_SUBTITLE = "A Different Mission · Rounds 4–6"
 
 INTRODUCTION = (
     "Take on a standalone underground MRT challenge. Balance Cost Saving, "
-    "Productivity & Innovation, and Safety across three rounds—no prior game is required."
+    "Productivity & Innovation, and Safety across three rounds."
 )
 
 QUESTIONS = [
