@@ -76,7 +76,7 @@ QUESTIONS = [
                 "best": True,
             },
             {
-                "label": "Option C — Full Reliance on the Supplier to Ensure Requirements Are Met",
+                "label": "Option C — Full Reliance on the Supplier to ensure requirements are met",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
                     "Relying on the supplier alone is not safe without verification that the product has "
@@ -129,7 +129,7 @@ QUESTIONS = [
         "prompt": "Choose how RSS should be introduced to enhance site supervision.",
         "options": [
             {
-                "label": "Option A — Manual Inspection with a Reduced Remote-Supervision Scheme",
+                "label": "Option A — Manual Inspection with a reduced remote-supervision scheme",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
                     "This reverses the intended role of RSS. Remote supervision should increase as a tool "
@@ -138,7 +138,7 @@ QUESTIONS = [
                 "best": False,
             },
             {
-                "label": "Option B — Reduced Site-Supervisor Deployment with CCTV and Technology",
+                "label": "Option B — Reduced site-supervisor deployment with CCTV and technology",
                 "scores": {"cs": 10, "pi": 10, "s": 10},
                 "feedback": (
                     "CCTV and supporting technology can maintain oversight and records while enabling a "
@@ -148,7 +148,7 @@ QUESTIONS = [
                 "best": True,
             },
             {
-                "label": "Option C — With CCTV, a Lower Level of Site Safety Is Acceptable",
+                "label": "Option C — With CCTV, a lower level of site safety is acceptable",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
                     "CCTV will reduce manual inspection effort, but must not compromise the required level of "
