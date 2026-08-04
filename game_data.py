@@ -21,27 +21,24 @@ QUESTIONS = [
             {
                 "label": "Option A — Built-in TBM Face Pressure with Ground Improvement Works",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
-                "feedback": (
-                    "“Built-in face pressure” does not define a controllable design method. The proposal "
-                    "needs an engineered pressure range and verification."
-                ),
+                "feedback": "“Built-in face pressure” does not define a controllable design method",
                 "best": False,
             },
             {
-                "label": "Option B — Automatic TBM Face Pressure with Ground Improvement Works",
+                "label": "Option B — Automatic TBM Face Pressure  with Ground Improvement Works",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
-                    "Automation can control the tunnelling process, but “automatic” does not establish that "
-                    "the selected face pressure is technically optimised for the ground or safe for nearby assets."
+                    "Automation can control tunneling process, but “automatic” does not establish that the "
+                    "selected face pressure is technically optimised for the ground and safe for nearby assets."
                 ),
                 "best": False,
             },
             {
-                "label": "Option C — Optimised TBM Face Pressure with Ground Improvement Works",
+                "label": "Option C — Optimised TBM Face Pressure  with Ground Improvement Works",
                 "scores": {"cs": 10, "pi": 10, "s": 10},
                 "feedback": (
                     "An optimised face-pressure range, supported by targeted ground improvement, is a "
-                    "performance-based alternative that manages stability, safety, and settlement while "
+                    "performance-based alternative that manages stability (safety) and settlement while "
                     "improving efficiency."
                 ),
                 "best": True,
@@ -60,8 +57,8 @@ QUESTIONS = [
                 "label": "Option A — Accredited Laboratory Testing with Random Site Testing",
                 "scores": {"cs": 5, "pi": 5, "s": 10},
                 "feedback": (
-                    "This is the safest option in isolation, but excessive and repetitive sampling would "
-                    "use resources unproductively."
+                    "While this proposal is the safest option, it would result in excessive and repetitive "
+                    "sampling, leading to an unproductive use of precious resources"
                 ),
                 "best": False,
             },
@@ -72,18 +69,18 @@ QUESTIONS = [
                 ),
                 "scores": {"cs": 10, "pi": 10, "s": 10},
                 "feedback": (
-                    "SAC-accredited laboratory testing during shipment and batch declaration reduces "
-                    "excessive, redundant site-level testing while maintaining quality records that are "
-                    "easy for the QP and site supervisors to retrieve."
+                    "SAC-accredited laboratory testing during shipment and batch declaration will reduce "
+                    "excessive and redundant site-level testing, while ensuring good quality records that "
+                    "are easily retrievable by the QP and site supervisors"
                 ),
                 "best": True,
             },
             {
-                "label": "Option C — Full Reliance on the Supplier for Compliance",
+                "label": "Option C — Full Reliance on Supplier to ensure requirement are made",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
-                    "Relying on the supplier alone is unsafe without verifying that the product was "
-                    "manufactured under an established conformity-assessment scheme."
+                    "Relying on the supplier alone is not safe without verification that the product has "
+                    "been manufactured under an established conformity assessment scheme"
                 ),
                 "best": False,
             },
@@ -99,8 +96,8 @@ QUESTIONS = [
                 "label": "Option A — 10 samples",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
-                    "This applies one sample per 100 m³ to the entire pour, but that rate applies only "
-                    "to the first 400 m³. It is therefore not the correct answer."
+                    "This is based on a sampling rate of 1 sample per 100m³, which is only applicable for "
+                    "the first 400m³, and therefore this is not the correct answer"
                 ),
                 "best": False,
             },
@@ -108,8 +105,8 @@ QUESTIONS = [
                 "label": "Option B — 7 samples",
                 "scores": {"cs": 10, "pi": 10, "s": 10},
                 "feedback": (
-                    "For 1,000 m³, the unified standard proposal requires four samples for the first "
-                    "400 m³ and three for the remaining 600 m³ at one sample per 200 m³: 4 + 3 = 7."
+                    "For 1,000m³, the unified standard proposal requires 4 samples for the first 400m³ and "
+                    "3 samples for the remaining 600m³ (1 sample per 200m³): 4 + 3 = 7 samples"
                 ),
                 "best": True,
             },
@@ -117,8 +114,9 @@ QUESTIONS = [
                 "label": "Option C — 5 samples",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
-                    "This applies one sample per 200 m³ to the entire pour, but that rate applies only "
-                    "after the first 400 m³. It is therefore not the correct answer."
+                    "This is based on a sampling rate of 1 sample per 200m³, which is only applicable for "
+                    "volumes above 400m³ (for the initial 400m³, the sampling rate is 1 sample per 100m³), "
+                    "and therefore this is not the correct answer."
                 ),
                 "best": False,
             },
@@ -131,31 +129,32 @@ QUESTIONS = [
         "prompt": "Choose how RSS should be introduced to enhance site supervision.",
         "options": [
             {
-                "label": "Option A — Manual Inspection with a Reduced Remote-Supervision Scheme",
+                "label": "Option A — Manual Inspection and reduced remote supervision scheme",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
                     "This reverses the intended role of RSS. Remote supervision should increase as a tool "
-                    "that supports efficient and productive deployment of the limited pool of supervisors."
+                    "that supports efficient and productive deployment of our limited pool of supervisors"
                 ),
                 "best": False,
             },
             {
-                "label": "Option B — Reduced Site-Supervisor Deployment with CCTV and Technology",
+                "label": "Option B — Reduced site supervisor deployment with CCTV and technology",
                 "scores": {"cs": 10, "pi": 10, "s": 10},
                 "feedback": (
                     "CCTV and supporting technology can maintain oversight and records while enabling a "
                     "carefully managed reduction in on-site supervisor deployment. Technology can also help "
-                    "the builder deliver compliance work upstream."
+                    "the builder delivey compliance work upstream."
                 ),
                 "best": True,
             },
             {
-                "label": "Option C — With CCTV, a Lower Level of Site Safety Is Acceptable",
+                "label": "Option C —  With CCTV, a lower of site safety is acceptable",
                 "scores": {"cs": 0, "pi": 0, "s": 0},
                 "feedback": (
-                    "CCTV can reduce manual inspection effort, but it must not compromise the required level "
-                    "of site safety. Safety obligations remain unchanged; real-time situational awareness "
-                    "and behavioural deterrence can improve safety outcomes."
+                    "CCTV will reduce manual inspection effort, but must not compromise the required level of "
+                    "site safety. Safety outcomes and obligations remain unchanged. In fact, it will improve "
+                    "safety outcomes by providing real-time situational awareness and acting as a behavioural "
+                    "deterrent"
                 ),
                 "best": False,
             },
